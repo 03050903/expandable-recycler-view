@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 
 import com.bignerdranch.expandablerecyclerview.Adapter.ExpandableRecyclerAdapter;
 import com.bignerdranch.expandablerecyclerview.Model.ParentListItem;
+import com.bignerdranch.expandablerecyclerview.ViewHolder.ChildViewHolder;
 
 import java.util.List;
 
@@ -27,7 +28,7 @@ public class CrimeExpandableAdapter extends ExpandableRecyclerAdapter<CrimeParen
     }
 
     @Override
-    public CrimeChildViewHolder onCreateChildViewHolder(ViewGroup viewGroup) {
+    public CrimeChildViewHolder onCreateChildViewHolder(ViewGroup viewGroup, int viewType) {
         View view = mInflater.inflate(R.layout.list_item_crime_child, viewGroup, false);
         return new CrimeChildViewHolder(view);
     }
@@ -39,9 +40,9 @@ public class CrimeExpandableAdapter extends ExpandableRecyclerAdapter<CrimeParen
     }
 
     @Override
-    public void onBindChildViewHolder(CrimeChildViewHolder crimeChildViewHolder, int i, Object childListItem) {
+    public void onBindChildViewHolder(ChildViewHolder crimeChildViewHolder, int i, Object childListItem) {
         CrimeChild crimeChild = (CrimeChild) childListItem;
-        crimeChildViewHolder.mCrimeDateText.setText(crimeChild.getDate().toString());
-        crimeChildViewHolder.mCrimeSolvedCheckBox.setChecked(crimeChild.isSolved());
+        ((CrimeChildViewHolder) crimeChildViewHolder).mCrimeDateText.setText(crimeChild.getDate().toString());
+        ((CrimeChildViewHolder) crimeChildViewHolder).mCrimeSolvedCheckBox.setChecked(crimeChild.isSolved());
     }
 }

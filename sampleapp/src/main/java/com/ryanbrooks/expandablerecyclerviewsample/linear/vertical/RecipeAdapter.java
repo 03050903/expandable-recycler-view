@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 
 import com.bignerdranch.expandablerecyclerview.Adapter.ExpandableRecyclerAdapter;
 import com.bignerdranch.expandablerecyclerview.Model.ParentListItem;
+import com.bignerdranch.expandablerecyclerview.ViewHolder.ChildViewHolder;
 import com.ryanbrooks.expandablerecyclerviewsample.R;
 
 import java.util.List;
@@ -28,7 +29,7 @@ public class RecipeAdapter extends ExpandableRecyclerAdapter<RecipeViewHolder, I
     }
 
     @Override
-    public IngredientViewHolder onCreateChildViewHolder(ViewGroup childViewGroup) {
+    public IngredientViewHolder onCreateChildViewHolder(ViewGroup childViewGroup, int viewType) {
         View ingredientView = mInflator.inflate(R.layout.ingredient_view, childViewGroup, false);
         return new IngredientViewHolder(ingredientView);
     }
@@ -40,8 +41,8 @@ public class RecipeAdapter extends ExpandableRecyclerAdapter<RecipeViewHolder, I
     }
 
     @Override
-    public void onBindChildViewHolder(IngredientViewHolder ingredientViewHolder, int position, Object childListItem) {
+    public void onBindChildViewHolder(ChildViewHolder ingredientViewHolder, int position, Object childListItem) {
         Ingredient ingredient = (Ingredient) childListItem;
-        ingredientViewHolder.bind(ingredient);
+        ((IngredientViewHolder)ingredientViewHolder).bind(ingredient);
     }
 }
