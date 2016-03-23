@@ -19,6 +19,14 @@
         android:layout_margin="@dimen/margin_medium"
         android:text="@string/activity_main_vertical_linear_sample_button"/>
 
+
+    <Button
+        android:id="@+id/activity_main_vertical_linear_multichild_sample_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_medium"
+        android:text="@string/activity_main_vertical_linear_multichild_sample_button"/>
+
     <Button
         android:id="@+id/activity_main_horizontal_linear_sample_button"
         android:layout_width="match_parent"

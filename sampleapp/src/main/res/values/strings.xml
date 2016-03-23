@@ -3,6 +3,7 @@
 
     <!-- Main screen -->
     <string name="activity_main_vertical_linear_sample_button">Vertical Linear Sample</string>
+    <string name="activity_main_vertical_linear_multichild_sample_button">Vertical Linear Sample(multiple Child ViewType)</string>
     <string name="activity_main_horizontal_linear_sample_button">Horizontal Linear Sample</string>
     <string name="activity_main_grid_sample_button">Grid Layout Sample</string>
     <string name="activity_main_header">Expanding RecyclerView</string>

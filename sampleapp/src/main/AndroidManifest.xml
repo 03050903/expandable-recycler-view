@@ -21,6 +21,15 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
         </activity>
+
+        <activity
+            android:label="@string/activity_main_vertical_linear_multichild_sample_button"
+            android:name=".linear.verticalchildviewtype.VerticalLinearChildViewTypeSampleActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
+
         <activity
             android:label="@string/activity_horizontal_linear_sample_title"
             android:name=".linear.horizontal.HorizontalLinearRecyclerViewSampleActivity">

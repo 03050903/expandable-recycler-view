@@ -8,6 +8,7 @@ import android.widget.Button;
 
 import com.ryanbrooks.expandablerecyclerviewsample.linear.horizontal.HorizontalLinearRecyclerViewSampleActivity;
 import com.ryanbrooks.expandablerecyclerviewsample.linear.vertical.VerticalLinearRecyclerViewSampleActivity;
+import com.ryanbrooks.expandablerecyclerviewsample.linear.verticalchildviewtype.VerticalLinearChildViewTypeSampleActivity;
 
 /**
  * Main Activity that contains navigation for sample application.
@@ -19,6 +20,7 @@ import com.ryanbrooks.expandablerecyclerviewsample.linear.vertical.VerticalLinea
 public class MainActivity extends AppCompatActivity {
 
     private Button mVerticalSampleButton;
+    private Button mVerticalSampleButtonMultiChildViewType;
     private Button mHorizontalSampleButton;
     private Button mGridSampleButton;
     private Toolbar mToolbar;
@@ -30,6 +32,9 @@ public class MainActivity extends AppCompatActivity {
 
         mVerticalSampleButton = (Button) findViewById(R.id.activity_main_vertical_linear_sample_button);
         mVerticalSampleButton.setOnClickListener(mVerticalSampleButtonClickListener);
+
+        mVerticalSampleButtonMultiChildViewType = (Button) findViewById(R.id.activity_main_vertical_linear_multichild_sample_button);
+        mVerticalSampleButtonMultiChildViewType.setOnClickListener(mVerticalMultipChildTypeSampleButtonClickListener);
 
         mHorizontalSampleButton = (Button) findViewById(R.id.activity_main_horizontal_linear_sample_button);
         mHorizontalSampleButton.setOnClickListener(mHorizontalSampleButtonClickListener);
@@ -47,6 +52,14 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void onClick(View v) {
             startActivity(HorizontalLinearRecyclerViewSampleActivity.newIntent(v.getContext()));
+        }
+    };
+
+
+    private View.OnClickListener mVerticalMultipChildTypeSampleButtonClickListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            startActivity(VerticalLinearChildViewTypeSampleActivity.newIntent(v.getContext()));
         }
     };
 }
